@@ -1,11 +1,15 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
+//import dotenv from 'dotenv'
+
+//dotenv.config();
 
 function App() {
   const [data, setData] = useState([])
 
+  const newEnv = import.meta.env;
   const getData = async ()=>{
-    const mainData = await axios.get("https://project-backend-8b8h.onrender.com/courses")
+    const mainData = await axios.get(newEnv.VITE_URL)
     console.log(mainData.data)
     setData(mainData.data)
   }
