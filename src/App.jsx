@@ -5,7 +5,7 @@ function App() {
   const [data, setData] = useState([])
 
   const getData = async ()=>{
-    const mainData = await axios.get("http://localhost:4000/courses")
+    const mainData = await axios.get("https://project-backend-8b8h.onrender.com/courses")
     console.log(mainData.data)
     setData(mainData.data)
   }
